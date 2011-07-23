@@ -1,0 +1,9 @@
+h1 Netflix Top 100 Watch Instantly by Rating
+
+ul
+  - for (var key in titles)
+    li
+      h2= titles[key].Name
+      dl
+        dt Netflix User Rating
+        dd= titles[key].AverageRating
