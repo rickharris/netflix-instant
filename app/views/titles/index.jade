@@ -1,9 +1,22 @@
 h1 Netflix Top 100 Watch Instantly by Rating
 
-ul
+#controls
+  #controls-inner
+    h2 Controls
+    form
+      label(for="year") Filter by year
+        input(type="text", name="year", id="year", value="#{year}")
+      input(type="submit")
+
+ol.titles
   - for (var key in titles)
     li
-      h2= titles[key].Name
+      h2
+        a(href="#{titles[key].Url}")= titles[key].Name
+      p
+        img(src="#{titles[key].BoxArt.MediumUrl}")
       dl
+        dt Synopsis
+        dd!= titles[key].Synopsis
         dt Netflix User Rating
         dd= titles[key].AverageRating

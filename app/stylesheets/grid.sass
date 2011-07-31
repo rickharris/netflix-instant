@@ -1,0 +1,29 @@
+$num-columns: 12
+$column-width: 60px
+$gutter-width: 20px
+
+.container
+  width: $column-width * $num-columns + $gutter-width * ($num-columns - 1)
+  margin: 0 auto
+  padding: 0
+  position: relative
+
+.row
+  @extend .clearfix
+  margin: 0 0 $gutter-width (-$gutter-width)
+
+.column
+  float: left
+  display: inline
+  margin: 0 0 0 $gutter-width
+
+@function grid-width($n)
+  @return $column-width * $n + $gutter-width * ($n - 1)
+
+@function grid-offset($n)
+  @return ($column-width + $gutter-width) * $n
+
+@for $i from 1 through 12
+  .grid-#{$i}
+    @extend .column
+    width: grid-width($i)

@@ -5,3 +5,4 @@ exports.index = (req, res) ->
     res.render "titles/index.jade",
       title: "Netflix Watch Instantly Browser"
       titles: data
+      year: req.query.year

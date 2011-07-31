@@ -1,0 +1,342 @@
+@charset "UTF-8";
+/*Type-A-File "Editorial" theme designed by Matthew Buchanan
+ *http://matthewbuchanan.name
+ *@mrb
+ *
+ *Based on original CSS by Russ Maschmeyer, aka StrangeNative.
+ *http://www.strangenative.com
+ *@strangenative
+ *
+ *Creative Commons License by Attribution. 
+ *Feel free to take it, adapt it, & use it on both commercial and non-commercial projects.
+ *Though we'd like a smidgeon of credit, so just leave this bit in here. K? */
+/*Pick Your Fonts */
+body, h3, h4, h5, h6, .run-in, dt, h1, h2, .pullquote, blockquote, .sidenote h1, aside h1, .pullquote, .drop-cap, cite {
+  font-family: "ff-tisa-web-pro", Georgia, serif;
+}
+
+/*Size & Vertical Rhythm */
+body {
+  font-size: 87.5%;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/*HTML Standard Elements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin: 1.3em 0 0;
+  font-weight: bold;
+  font-style: italic;
+  border-top: 0.2em solid black;
+  border-bottom: 0.05em solid #cccccc;
+  padding: 0.3em 0 0.65em;
+}
+
+h2 {
+  font-size: 1.75em;
+  line-height: 1.1;
+  margin: 2em 0 0.5em;
+}
+
+h1 + img, h2 + img {
+  margin-top: 0.75em;
+}
+
+h3 {
+  font-size: 1.125em;
+  margin-top: 0.375em;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+
+small {
+  display: block;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  margin: 2.2em 0 -0.2em;
+  line-height: 1.75;
+  opacity: 0.6;
+}
+
+p, ul, ol, form {
+  margin: 1.5em 0 1em;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+  line-height: 1.5;
+}
+
+li {
+  margin-bottom: 0.75em;
+}
+
+ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+blockquote {
+  font-style: italic;
+  margin-right: 5em;
+}
+blockquote:before {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  content: "“";
+  font-size: 2.1em;
+  font-style: normal;
+  text-indent: -0.75em;
+  float: left;
+  opacity: 0.3;
+  line-height: 1.25;
+}
+
+cite {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 0.75em;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 0.85em;
+}
+cite:before {
+  content: "—";
+  margin-left: -1.75em;
+  margin-right: 0.5em;
+  opacity: 0.3;
+}
+
+pre {
+  padding: 0.75em;
+  border: 1px solid #cccccc;
+  background: #dddddd;
+  margin: 1.5em 0 0;
+}
+
+code, pre code {
+  font-family: Consolas, "Lucida Console", Monaco, monospace;
+}
+
+p code, li code, *:not(pre) code {
+  background-color: #dddddd;
+  padding: 0.15em 0.3em;
+  font-size: 0.9em;
+}
+
+dl {
+  margin: 1.75em 0;
+}
+
+dt {
+  margin-top: 1.25em;
+  font-size: 1.13em;
+  font-weight: 700;
+}
+
+dd {
+  font-style: italic;
+  font-size: 1em;
+  margin-top: 1em;
+  margin-right: 5em;
+  line-height: 1.6;
+  border-left: 1px solid #cccccc;
+  padding-left: 1em;
+}
+
+abbr {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+}
+
+p {
+  margin-bottom: 0;
+  hyphenate: auto;
+  hyphenate-before: 2;
+  hyphenate-after: 3;
+  hyphenate-lines: 3;
+  orphans: 4;
+}
+p span.pullquote {
+  text-indent: 0;
+}
+
+/*Compositional Elements */
+.kicker {
+  font-size: 1.25em;
+  line-height: 1.693;
+  margin: -0.35em 0 -0.35em;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -webkit-column-gap: 1.5em;
+  -moz-column-gap: 1.5em;
+  font-weight: 100;
+}
+
+.pullquote {
+  font-weight: 100;
+}
+
+.superscript {
+  font-family: sans-serif;
+  vertical-align: super;
+  font-size: 0.75em;
+  margin-right: 0.4em;
+  margin-left: 0.2em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  line-height: 0;
+}
+
+.subscript {
+  font-family: sans-serif;
+  vertical-align: sub;
+  font-size: 0.75em;
+  margin-right: 0.4em;
+  margin-left: 0.2em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  line-height: 0;
+}
+
+a.superscript, a.subscript {
+  text-decoration: none;
+}
+
+aside, .sidenote {
+  font-size: 0.875em;
+  font-style: italic;
+  margin-top: 1.25em;
+}
+
+aside h1, .sidenote h1 {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  line-height: 1.5;
+  font-style: normal;
+  font-weight: 900;
+  margin-top: 1em;
+  padding-top: 0.5em;
+  border-top: 3px solid black;
+  border-bottom: 1px solid #cccccc;
+}
+
+aside p, .sidenote p {
+  line-height: 1.7;
+  margin: 1.3em 0;
+  font-style: normal;
+}
+
+aside ul, aside ol {
+  margin-top: 1.3em;
+  line-height: 1.7;
+}
+
+.sidenote ul, .sidenote ol {
+  margin-top: 1.3em;
+  line-height: 1.7;
+}
+
+aside ul li, aside ol li {
+  margin-bottom: 1.3em;
+}
+
+.sidenote ul li, .sidenote ol li {
+  margin-bottom: 1.3em;
+}
+
+.pullquote {
+  font-style: italic;
+  margin: 0.5em 1.25em 0.3em 0;
+  padding-top: 0.15em;
+  line-height: 1.2;
+  display: block;
+  float: left;
+  font-size: 1.6em;
+  width: 40%;
+}
+.pullquote:before {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  content: "“";
+  font-size: 2em;
+  font-style: normal;
+  text-indent: -0.75em;
+  float: left;
+  opacity: 0.3;
+  line-height: 1.15;
+}
+
+.footnote {
+  border-top: 1px solid black;
+  font-size: 0.875em;
+  margin-top: 3.5em;
+}
+.footnote li {
+  margin: 1.5em 0 1.5em;
+  word-spacing: 0.1em;
+  line-height: 1.75;
+}
+.footnote .run-in {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.caption {
+  font-size: 1em;
+  font-style: italic;
+  margin: 0.6em 0 -0.2em;
+  opacity: 0.6;
+}
+
+.run-in {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+}
+
+.kicker *::first-line {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 0;
+}
+
+.drop-cap {
+  display: block;
+  font-style: normal;
+  font-size: 3.75em;
+  float: left;
+  margin: 0.16em 0.2em 0 0;
+  line-height: 0.67;
+  font-weight: 100;
+  background-color: black;
+  color: white;
+  -webkit-border-radius: 2.5em;
+  -moz-border-radius: 2.5em;
+  border-radius: 2.5em;
+  padding: 0.3em 0.3em 0.35em;
+  min-width: 0.8em;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.33);
+}
+
+/*Tweaks */
+.kern {
+  letter-spacing: -0.05em;
+}
