@@ -22,7 +22,7 @@ app.configure "production", ->
 
 # Routes
 app.get "/", (req, res) ->
-  res.render "index", title: "Express"
+  res.redirect "/titles"
 
 app.resource "titles", require("./app/controllers/titles_controller")
 
