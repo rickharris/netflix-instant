@@ -8,6 +8,9 @@ module.exports = class App
 
     _.bindAll(this)
 
+    # Cache our inital markup for onpopstate event
+    @initialState = $('#main').html()
+
     # Get our titles template from Stitch
     @titlesTmpl = require('index')
 
@@ -20,7 +23,8 @@ module.exports = class App
 
   update: (titles) ->
     # Replace whatever content is in `#main` with our rendered titles
-    $("#main").html(@titlesTmpl(titles: titles))
+    rendered = if typeof titles == 'string' then titles else @titlesTmpl(titles: titles)
+    $("#main").html(rendered)
 
   onFormSubmit: (event) ->
     event.preventDefault()
@@ -38,7 +42,4 @@ module.exports = class App
     history.pushState titles, "", @lastPath + @lastQuery
 
   onPopState: (event) ->
-    # `onpopstate` is fired on the initial state (page load), when there is no
-    # state set, so we only act on subsequent firings, when the state will be
-    # set
-    @update event.state if event.state
+    @update event.state || @initialState
