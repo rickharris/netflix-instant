@@ -1,5 +1,8 @@
 express = require "express"
 Resource = require "express-resource"
+stitch = require "stitch"
+jade = require "jade"
+fs = require "fs"
 app = module.exports = express.createServer()
 
 # Configuration
@@ -25,6 +28,18 @@ app.get "/", (req, res) ->
   res.redirect "/titles"
 
 app.resource "titles", require("./app/controllers/titles_controller")
+
+# Compile views and make them available via stitch
+stitch.compilers.jade = (module, filename) ->
+  content = "module.exports = #{jade.compile(fs.readFileSync filename, 'utf8')};"
+  module._compile content, filename
+
+package = stitch.createPackage
+  paths: [ __dirname + '/app/views/titles', __dirname + '/public/javascripts' ]
+  dependencies: [ __dirname + '/public/vendor/jquery-1.6.2.js' ]
+
+
+app.get('/javascripts/lib.js', package.createServer());
 
 port = process.env.PORT || 3000
 app.listen(port)

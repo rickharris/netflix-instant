@@ -1,12 +1,15 @@
-ol.titles
-  - for (var key in titles)
-    li
-      h2
-        a(href="#{titles[key].Url}")= titles[key].Name
-      p
-        img(src="#{titles[key].BoxArt.MediumUrl}")
-      dl
-        dt Synopsis
-        dd!= titles[key].Synopsis
-        dt Netflix User Rating
-        dd= titles[key].AverageRating
+- if (titles.length)
+  ol.titles
+    - for (var key in titles)
+      li
+        h2
+          a(href="#{titles[key].Url}")= titles[key].Name
+        p
+          img(src="#{titles[key].BoxArt.MediumUrl}")
+        dl
+          dt Synopsis
+          dd!= titles[key].Synopsis
+          dt Netflix User Rating
+          dd= titles[key].AverageRating
+- else
+  <p><em>No titles found</em></p>

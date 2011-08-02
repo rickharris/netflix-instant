@@ -6,14 +6,21 @@ html
     script(src="http://use.typekit.com/emk1fes.js")
     script
       try{Typekit.load();}catch(e){}
-  body!= body
+  body
     h1= title
-
 
     #controls
       #controls-inner
         h2 Controls
-        form(method="get")
+        form(method="get", action="/titles")
           label(for="year") Filter by year
-            input(type="text", name="year", id="year", value="#{year}")
+            input(type="text", name="year", id="year", value="#{year || ''}")
           input(type="submit")
+
+    #main
+      != body
+
+    script(src="/javascripts/lib.js")
+    :coffeescript
+      App = require('app')
+      App.init()
