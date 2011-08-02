@@ -36,7 +36,10 @@ stitch.compilers.jade = (module, filename) ->
 
 package = stitch.createPackage
   paths: [ __dirname + '/app/views/titles', __dirname + '/public/javascripts' ]
-  dependencies: [ __dirname + '/public/vendor/jquery-1.6.2.js' ]
+  dependencies: [
+    __dirname + '/public/vendor/jquery-1.6.2.js',
+    __dirname + '/public/vendor/underscore.js'
+  ]
 
 
 app.get('/javascripts/lib.js', package.createServer());
